@@ -2,8 +2,7 @@
 #include <windows.h>
 #include <math.h>
 #include <stdlib.h>
-
-//ayaam
+//naga sari inti sari purwosari
 int is_depth;
 float xrot = 0;
 float yrot = 0;
