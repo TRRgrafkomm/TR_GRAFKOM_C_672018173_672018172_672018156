@@ -9,8 +9,8 @@ float xrot = 0;
 float yrot = 0;
 float xdiff = 0;
 float ydiff = 0;
-bool mousedown =false;
 
+bool mouseDown =false;	
 float w(int x){
 	float hasil = x;
 	if(x>=255){
@@ -24,25 +24,15 @@ float c[100][4] = {{w(0),w(127),w(255),1.0f},
 					{w(255),w(127),w(0),1.0f}
 					};
 
-void tabung(float radatas,float radbawah,float tinggi, float x, float y,float z,float atas[4],float selimut[4], float bawah[4],int mulai ,int stop){
+void tabung(float radatas,float radbawah,float tinggi, float x, float y,float z, int mulai ,int stop){
 	float theta,theti;
 	int i,j;
 
-	if(mulai <=0){
-		mulai= 0;
-	}else if(mulai>=360){
-		mulai = 360;
-	};
-	if(stop <= 0){
-		stop = 0;
-	}else if(stop >=360){
-		stop = 360;
-	};
 
 	glPushMatrix();//bawah
 	glPushMatrix();
 	glBegin(GL_POLYGON);
-	glColor4f(bawah[0],bawah[1],bawah[2],bawah[3]);
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 	for(i=mulai;i<stop;i++){
 		theta = i*3.14/180;
 		glVertex3f(x+radbawah*cos(theta),y,z+radbawah*sin(theta));
@@ -50,7 +40,7 @@ void tabung(float radatas,float radbawah,float tinggi, float x, float y,float z,
 	glEnd();
 	//selimut
 	glBegin(GL_POLYGON);
-	glColor4f(selimut[0],selimut[1],selimut[2],selimut[3]);
+	glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
 	for(i=mulai;i<stop;i++){
 		theta = i*3.14/180;
 		if(i==359){
@@ -67,7 +57,7 @@ void tabung(float radatas,float radbawah,float tinggi, float x, float y,float z,
 	glEnd();
 	//atas
 	glBegin(GL_POLYGON);
-	glColor4f(atas[0],atas[1],atas[2],atas[3]);
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 	for(i=mulai;i<stop;i++){
 		theta = i*3.14/180;
 		glVertex3f(x+radatas*cos(theta),y+tinggi,z+radatas*sin(theta));
@@ -75,23 +65,29 @@ void tabung(float radatas,float radbawah,float tinggi, float x, float y,float z,
 	glEnd();
 	glPopMatrix();
 	glPopMatrix();
-};
+}
 
-	
+void idle(){
+	if(!mouseDown){
+	    xrot += 0.3f;
+		yrot += 0.4f;
+	}
+	glutPostRedisplay();
+}
 
 void mouse(int button, int state, int x, int y){
 	if(button == GLUT_LEFT_BUTTON&& state == GLUT_DOWN){
-	mousedown=true;
+	mouseDown=true;
 	xdiff=x-yrot;
 	ydiff=-y+xrot;
 	}
 	else{
-	mousedown = false;
+	mouseDown = false;
 	}
 	glutPostRedisplay();
 }
 void mousemotion(int x, int y){
-		if (mousedown){
+		if (mouseDown){
 		yrot=x-xdiff;
 		xrot=y+ydiff;
 
@@ -100,26 +96,17 @@ void mousemotion(int x, int y){
 	}
 
 
-void initGL() {
-   glClearColor((float)77/255.0f,(float)72/255.0f,(float)63/255.0f,1); 
-   glClearDepth(1.0f);                  
-   glEnable(GL_DEPTH_TEST);   
-   glDepthFunc(GL_LEQUAL);   
-   glShadeModel(GL_SMOOTH);   
-   glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-   glEnable(GL_BLEND);
-   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-is_depth=1;
-}
-void Traktor(float x, float y, float z, float px, float py, float pz)
-{
 
+void Traktor()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
 	glLineWidth(2);
 	glPushMatrix();
-	//udud dulu asdos bngsd
-	tabung(7.0f,7.0f,5.0f,12.0,3.0,1.0,c[1],c[0],c[1],0,360);
+	//
+
+
 
 	//Ruang Supir
 	glBegin(GL_POLYGON);
@@ -261,6 +248,7 @@ void Traktor(float x, float y, float z, float px, float py, float pz)
 	glEnd();
 
 	//roda
+
 	glBegin(GL_POLYGON);
 	glColor3f(1,1,0);
 	glVertex3f( -4.0, -2.0, -2.0);
@@ -300,9 +288,150 @@ void Traktor(float x, float y, float z, float px, float py, float pz)
     glVertex3f( 4.0, -2.0, -6.0);
     glVertex3f( 4.0, -2.0, -2.0);
 	glEnd();
-	
-	
+	//penahan penggali
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);
+	glVertex3f( 14.5, -2.0, -2.5);
+    glVertex3f( 15.5, 0.0, -2.5);
+    glVertex3f( 16.0, 0.0, -2.5);
+    glVertex3f( 16.5, -2.0, -2.5);
+	glEnd();
 
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);
+	glVertex3f( 16.5, -2.0, -2.5);
+    glVertex3f( 16.0, 0.0, -2.5);
+    glVertex3f( 16.0, 0.0, -5.5);
+    glVertex3f( 16.5, -2.0, -5.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);
+	glVertex3f( 16.5, -2.0, -5.5);
+    glVertex3f( 16.0, 0.0, -5.5);
+    glVertex3f( 15.5, 0.0, -5.5);
+    glVertex3f( 14.5, -2.0, -5.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);
+	glVertex3f( 15.5, 0.0, -2.5);
+    glVertex3f( 15.5, 0.0, -3.0);
+    glVertex3f( 16.0, 0.0, -3.0);
+    glVertex3f( 16.0, 0.0, -2.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);
+	glVertex3f( 16.0, 0.0, -2.5);
+    glVertex3f( 15.5, 0.0, -2.5);
+    glVertex3f( 15.5, 0.0, -5.5);
+    glVertex3f( 16.0, 0.0, -5.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);
+	glVertex3f( 15.5, 0.0, -2.5);
+    glVertex3f( 15.0, 3.0, -2.5);
+    glVertex3f( 16.0, 3.0, -2.5);
+    glVertex3f( 16.0, 0.0, -2.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);
+	glVertex3f( 15.5, 0.0, -5.5);
+    glVertex3f( 15.0, 3.0, -5.5);
+    glVertex3f( 16.0, 3.0, -5.5);
+    glVertex3f( 16.0, 0.0, -5.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);//kanan
+	glVertex3f( 16.0, 3.0, -2.5);
+    glVertex3f( 16.0, 2.5, -2.5);
+    glVertex3f( 6.0, 2.7, -2.5);
+    glVertex3f( 6.0, 2.3, -2.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);//kiri
+	glVertex3f( 16.0, 3.0, -5.5);
+    glVertex3f( 16.0, 2.5, -5.5);
+    glVertex3f( 5.0, 2.7, -5.5);
+    glVertex3f( 5.0, 2.3, -5.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,0);
+	glVertex3f( 5.5, 0.0, -2.5);
+    glVertex3f( 6.0, 4.0, -2.5);
+    glVertex3f( 6.5, 4.0, -2.5);
+    glVertex3f( 6.0, 0.0, -2.5);
+	glEnd();
+
+
+	//ban kanan
+	glBegin(GL_POLYGON);
+	glColor3f(0,0,0);
+	glVertex3f( -4.0, -1.0, 0.0);
+    glVertex3f( -4.0, -1.0, -2.0);
+    glVertex3f( 6.0,  -1.0, -2.0 );
+    glVertex3f( 6.0,  -1.0, 0.0);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0,0,0);
+	glVertex3f( -4.0, -3.0, 0.0);
+    glVertex3f( -4.0, -3.0, -2.0);
+    glVertex3f( 6.0,  -3.0, -2.0 );
+    glVertex3f( 6.0,  -3.0, 0.0);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0,0,0);
+	glVertex3f( -3.5, -2.5, 0.1);
+    glVertex3f( -3.5, -1.5, 0.1);
+    glVertex3f( 5.5,  -1.5, 0.1 );
+    glVertex3f( 5.5,  -2.5, 0.1);
+	glEnd();
+
+	//ban kiri
+	glBegin(GL_POLYGON);
+	glColor3f(0,0,0);
+	glVertex3f( -4.0, -1.0, -6.0);
+    glVertex3f( -4.0, -1.0, -8.0);
+    glVertex3f( 6.0,  -1.0, -8.0 );
+    glVertex3f( 6.0,  -1.0, -6.0);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0,0,0);
+	glVertex3f( -4.0, -3.0, -6.0);
+    glVertex3f( -4.0, -3.0, -8.0);
+    glVertex3f( 6.0,  -3.0, -8.0 );
+    glVertex3f( 6.0,  -3.0, -6.0);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(0,0,0);
+	glVertex3f( -3.5, -2.5, -8.1);
+    glVertex3f( -3.5, -1.5, -8.1);
+    glVertex3f( 5.5,  -1.5, -8.1 );
+    glVertex3f( 5.5,  -2.5, -8.1);
+	glEnd();
+
+	glRotatef(90, 1.0f, 0.0f, 0.0f);
+	tabung(4.0f, 4.0f, 2.0f, 11.0f, -5.0f, -1.0f, 0, 360);
+	tabung(1.0f, 1.0f, 2.0f, 6.0f, -2.0f, 2.0f, 0, 360);
+	tabung(1.0f, 1.0f, 2.0f, -4.0f, -2.0f, 2.0f, 0, 360);
+	tabung(1.0f, 1.0f, 2.0f, 6.0f, -8.0f, 2.0f, 0, 360);
+	tabung(1.0f, 1.0f, 2.0f, -4.0f, -8.0f, 2.0f, 0, 360);
+
+	glRotatef(90, 1.0f, 0.0f, 0.0f);
+	tabung(1.0f, 1.0f, 4.0f, 8.0f, 2.0f, -6.0f, 0, 360);
+
+	glPopMatrix();
+	glutSwapBuffers();
 }
 
 void reshape(GLsizei width, GLsizei height) {  // GLsizei for non-negative integer
@@ -320,121 +449,127 @@ void reshape(GLsizei width, GLsizei height) {  // GLsizei for non-negative integ
    gluPerspective(45.0f, aspect, 0.1f, 100.0f);
 }
 
-void display(void){
-    glPushMatrix();
-  	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    gluLookAt(0,10,20,0,0,0,0,1,0);
-	glRotatef(xrot,1,0,0);
-	glRotatef(yrot,0,1,0);
-	glColor3f(1,0,0);	
-    Traktor(0,0,0,10,10,10);
-    glPopMatrix();
-	glutSwapBuffers();
+void inisialisasi() {
+	glClearColor(0.0 , 1 , 1 , 1);
+	glClearDepth(1.0f);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_COLOR_MATERIAL);
+	glEnable(GL_LIGHT0);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_NORMALIZE);
+	is_depth = 1;
+	glDepthFunc(GL_LEQUAL);
+	glShadeModel(GL_SMOOTH);
+	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }
 
-void keyboard(unsigned char pencetan, int uh, int ah) {
-   switch (pencetan) {
-		
-			 //geser ke kiri
-		case 'a':
-			glTranslatef(-0.5f, 0.0, 0.0);
-			break;
+
+
+void FungsiKeyboard(unsigned char key, int x, int y) {
+	switch (key) {
+		//gerak ke kiri
 		case 'A':
-			glTranslatef(-1.0, 0.0, 0.0);
-			break;
-			//geser ke kanan
-		case 'd':
-			glTranslatef(0.5f, 0.0, 0.0);
-			break;
+		case 'a':
+		glTranslatef(-1.0, 0.0, 0.0);
+		break;
+
+		//gerak ke kanan
 		case 'D':
-			glTranslatef(1.0, 0.0, 0.0);
-			break;
-			 //gerak ke atas
-		case 'w':
-			glTranslatef(0.0, 0.5f, 0);
-			break;
-		case 'W':
-			glTranslatef(0.0, 1.0, 0);
-			break;
-			 //gerak ke bawah
-		case 's':
-			glTranslatef(0.0, -0.5f, 0);
-			break;
+		case 'd':
+		glTranslatef(1.0, 0.0, 0.0);
+		break;
+
+		//gerak ke depan
 		case 'S':
-			glTranslatef(0.0, -1.0, 0);
-			break;
-			 //gerak ke depan
-		case 'z':
-			glTranslatef(0.0, 0, 0.5f);
-			break;
+		case 's':
+		glTranslatef(0.0, 0.0, 1.0);
+		break;
+
+		//gerak ke belakang
+		case 'W':
+		case 'w':
+		glTranslatef(0.0, 0.0, -1.0);
+		break;
+
+		//gerak ke atas
+		case 'Q':
+		case 'q':
+		glTranslatef(0.0, 1.0, 0.0);
+		break;
+
+		//gerak ke bawah
 		case 'Z':
-			glTranslatef(0.0, 0, 1.0);
-			break;
-			 //gerak ke belakang
-		case 'c':
-			glTranslatef(0.0, .0, -0.5f);
-			break;
-		case 'C':
-			glTranslatef(0.0, .0, -1.0);
-			break;
-			 //rotate ke kiri
-		case 'k':
-			glRotatef(1.0, 0.0, -5.0, 0.0);
-			break;
-		case 'K':
-			glRotatef(2.0, 0.0, -5.0, 0.0);
-			break;
-			//rotate ke kanan
-		case ';':
-			glRotatef(1.0, 0.0, 5.0, 0.0);
-			break;
-		case ':':
-			glRotatef(2.0, 0.0, 5.0, 0.0);
-			break;
-			//rotate ke samping kanan
-		case 'p':
-			glRotatef(1.0, 0.0, 0.0, -5.0);
-			break;
-		case 'P':
-			glRotatef(2.0, 0.0, 0.0, -5.0);
-			break;
-			//rotate ke samping kiri
-		case 'i':
-			glRotatef(1.0, 0.0, 0.0, 5.0);
-			break;
+		case 'z':
+		glTranslatef(0.0, -1.0, 0.0);
+		break;
+
+		//rotate ke kiri
+		case 'Y':
+		case 'y':
+		glRotatef(1.0, 0.0, -5.0, 0.0);
+		break;
+
+		//rotate ke kanan
 		case 'I':
-			glRotatef(2.0, 0.0, 0.0, 5.0);
-			break;
-			//rotate ke atas
-		case 'o':
-			glRotatef(1.0, -5.0, 0.0, 0.0);
-			break;
-		case 'O':
-			glRotatef(2.0, -5.0, 0.0, 0.0);
-			break;
-			//rotate ke bawah
-		case 'l':
-			glRotatef(1.0, 5.0, 0.0, 0.0);
-			break;
-		case 'L':
-			glRotatef(2.0, 5.0, 0.0, 0.0);
-			break;
-   }
-   display();
-   //glutPostRedisplay(); 
+		case 'i':
+		glRotatef(1.0, 0.0, 5.0, 0.0);
+		break;
+
+		//rotate ke samping kanan
+		case 'K':
+		case 'k':
+		glRotatef(1.0, 0.0, 0.0, -5.0);
+		break;
+
+		//rotate ke samping kiri
+		case 'H':
+		case 'h':
+		glRotatef(1.0, 0.0, 0.0, 5.0);
+		break;
+
+		//rotate ke atas
+		case 'U':
+		case 'u':
+		glRotatef(1.0, -5.0, 0.0, 0.0);
+		break;
+
+		//rotate ke bawah
+		case 'J':
+		case 'j':
+		glRotatef(1.0, 5.0, 0.0, 0.0);
+		break;
+
+		case '5':
+			if (is_depth){
+			is_depth = 0;
+			glDisable (GL_DEPTH_TEST);
+			}else
+			{
+			is_depth = 1;
+			glDisable (GL_DEPTH_TEST);
+			}
+	Traktor();
+		break;
+
+		//exit
+		case 27:
+		exit(0);
+	}
+	Traktor();
 }
+
 int main(int argc, char** argv) {
    glutInit(&argc, argv);            // Initialize GLUT
    glutInitDisplayMode(GLUT_DOUBLE); // Enable double buffered mode
    glutInitWindowSize(880, 700);   // Set the window's initial width & height
    glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
    glutCreateWindow("3GP");          // Create window with the given title
-    initGL(); 
    glutReshapeFunc(reshape);       // Register callback handler for window re-size event
-   glutDisplayFunc(display);       // Register callback handler for window re-paint event
-   glutKeyboardFunc(keyboard);
+   glutDisplayFunc(Traktor);       // Register callback handler for window re-paint event
+   glutKeyboardFunc(FungsiKeyboard);
    glutMouseFunc(mouse);
-	glutMotionFunc(mousemotion);
+   glutMotionFunc(mousemotion);
+   inisialisasi();
 	// Our own OpenGL initialization
    glutMainLoop();                 // Enter the infinite event-processing loop
    return 0;
