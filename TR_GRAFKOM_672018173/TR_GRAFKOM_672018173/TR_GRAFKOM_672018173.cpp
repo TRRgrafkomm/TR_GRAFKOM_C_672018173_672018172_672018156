@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <math.h>
 #include <stdlib.h>
+
 //naga sari inti sari purwosari
 int is_depth;
 float xrot = 0;
@@ -109,7 +110,7 @@ void Traktor()
 
 	//Ruang Supir
 	glBegin(GL_POLYGON);
-	glColor3f(1,1,1);//depan
+	glColor3f(0,0,0);//depan
 	glVertex3f( 0.0, 0.0, 0.0);
     glVertex3f( 0.0, 5.0, 0.0);
     glVertex3f( 5.0, 5.0, 0.0);
@@ -117,7 +118,7 @@ void Traktor()
 	glEnd();
 	
 	glBegin(GL_POLYGON);
-	glColor3f(1,1,1);//kanan
+	glColor3f(0,0,0);//kanan
 	glVertex3f( 5.0, 0.0, 0.0);
     glVertex3f( 5.0, 5.0, 0.0);
     glVertex3f( 5.0, 5.0, -3.0);
@@ -125,7 +126,7 @@ void Traktor()
 	glEnd();
 
 	glBegin(GL_POLYGON);
-	glColor3f(1,1,1);//belakang
+	glColor3f(0,0,0);//belakang
 	glVertex3f( 5.0, 0.0, -3.0);
     glVertex3f( 5.0, 5.0, -3.0);
     glVertex3f( 0.0, 5.0, -3.0);
@@ -133,7 +134,7 @@ void Traktor()
 	glEnd();
 
 	glBegin(GL_POLYGON);
-	glColor3f(1,1,1);//kiri
+	glColor3f(0,0,0);//kiri
 	glVertex3f( 0.0, 0.0, -3.0);
     glVertex3f( 0.0, 5.0, -3.0);
     glVertex3f( 0.0, 5.0, 0.0);
@@ -148,9 +149,17 @@ void Traktor()
     glVertex3f( 5.0, 5.0, 0.0);
 	glEnd();
 
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,1);//kaca
+	glVertex3f( 5.1, 1.0, -1.0);
+    glVertex3f( 5.1, 4.0, -2.5);
+    glVertex3f( 5.1, 4.0, -2.5);
+    glVertex3f( 5.1, 1.0, -1.0);
+	glEnd();
+
 	//Bodi
 	glBegin(GL_POLYGON);
-	glColor3f(1,0,0);//depan
+	glColor3f(1,1,0);//depan
 	glVertex3f( -7.0, 0.0, -3.0);
     glVertex3f( -7.0, 3.0, -3.0);
     glVertex3f( 6.0, 3.0, -3.0);
@@ -158,7 +167,7 @@ void Traktor()
 	glEnd();
 
 	glBegin(GL_POLYGON);
-	glColor3f(1,0,0);//kanan
+	glColor3f(1,1,0);//kanan
 	glVertex3f( 6.0, 0.0, -3.0);
     glVertex3f( 6.0, 3.0, -3.0);
     glVertex3f( 6.0, 3.0, -7.0);
@@ -166,7 +175,7 @@ void Traktor()
 	glEnd();
 
 	glBegin(GL_POLYGON);
-	glColor3f(1,0,0);//belakang
+	glColor3f(1,1,0);//belakang
 	glVertex3f( 6.0, 0.0, -7.0);
     glVertex3f( 6.0, 3.0, -7.0);
     glVertex3f( -7.0, 3.0, -7.0);
@@ -174,7 +183,7 @@ void Traktor()
 	glEnd();
 
 	glBegin(GL_POLYGON);
-	glColor3f(1,0,0);
+	glColor3f(1,1,0);
 	glVertex3f( -7.0, 0.0, -7.0);
     glVertex3f( -7.0, 3.0, -7.0);
     glVertex3f( -7.0, 3.0, -3.0);
