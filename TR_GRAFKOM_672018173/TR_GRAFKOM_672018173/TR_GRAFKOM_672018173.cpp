@@ -148,13 +148,45 @@ void Traktor()
     glVertex3f( 5.0, 5.0, -3.0);
     glVertex3f( 5.0, 5.0, 0.0);
 	glEnd();
-
+	
 	glBegin(GL_POLYGON);
 	glColor3f(1,1,1);//kaca
-	glVertex3f( 5.1, 1.0, -1.0);
-    glVertex3f( 5.1, 4.0, -2.5);
-    glVertex3f( 5.1, 4.0, -2.5);
-    glVertex3f( 5.1, 1.0, -1.0);
+	glVertex3f( 5.0, 4.5, -0.5);
+    glVertex3f( 5.0, 4.5, -2.5);
+    glVertex3f( 5.0, 2.5, -2.5);
+    glVertex3f( 5.0, 2.5, -0.5);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,1);//kaca samping
+	glVertex3f( 3.0, 1.5, 0.0);
+    glVertex3f( 3.0, 4.5, 0.0);
+    glVertex3f( 4.5, 4.5, 0.0);
+    glVertex3f( 4.5, 1.5, 0.0);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,1);//kaca samping
+	glVertex3f( 1.0, 2.5, 0.0);
+    glVertex3f( 1.0, 4.0, 0.0);
+    glVertex3f( 2.5, 4.0, 0.0);
+    glVertex3f( 2.5, 2.5, 0.0);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,1);//kaca samping
+	glVertex3f( 1.0, 0.8, 0.0);
+    glVertex3f( 1.0, 2.3, 0.0);
+    glVertex3f( 2.5, 2.3, 0.0);
+    glVertex3f( 2.5, 0.8, 0.0);
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	glColor3f(1,1,1);//kaca bealakang
+	glVertex3f( 0.0, 0.5, -2.5);
+    glVertex3f( 0.0, 4.5, -2.5);
+    glVertex3f( 0.0, 4.5, -0.5);
+    glVertex3f( 0.0, 0.5, -0.5);
 	glEnd();
 
 	//Bodi

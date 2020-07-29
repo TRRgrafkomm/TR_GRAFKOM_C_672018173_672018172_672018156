@@ -1,4 +1,4 @@
-﻿Build started 29/07/2020 22:14:03.
+﻿Build started 30/07/2020 01:53:45.
      1>Project "C:\Users\jorge\OneDrive\Kuliah\TR_GRAFKOM_C_672018173_672018172_672018156\TR_GRAFKOM_C_672018173_672018172_672018156\TR_GRAFKOM_672018173\TR_GRAFKOM_672018173\TR_GRAFKOM_672018173.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\TR_GRAFKOM_672018173.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -10,22 +10,22 @@
      1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(45): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
      1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(51): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
      1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(62): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(154): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(155): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(156): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(157): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(360): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(361): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(368): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(369): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(178): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(179): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(180): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(181): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(392): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(393): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
      1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(400): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
      1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(401): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(402): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(403): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(425): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(426): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(427): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(428): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(432): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(433): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(434): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(435): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(457): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(458): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(459): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>c:\users\jorge\onedrive\kuliah\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_c_672018173_672018172_672018156\tr_grafkom_672018173\tr_grafkom_672018173\tr_grafkom_672018173.cpp(460): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -44,4 +44,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.27
+Time Elapsed 00:00:01.93
