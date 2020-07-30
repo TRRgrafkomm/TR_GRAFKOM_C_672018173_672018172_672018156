@@ -30,7 +30,7 @@ void tabung(float radatas,float radbawah,float tinggi, float x, float y,float z,
 
 
 	glPushMatrix();//bawah
-	glPushMatrix();
+	glPushMatrix();//menyimpan kordinat
 	glBegin(GL_POLYGON);
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 	for(i=mulai;i<stop;i++){
@@ -63,7 +63,7 @@ void tabung(float radatas,float radbawah,float tinggi, float x, float y,float z,
 		glVertex3f(x+radatas*cos(theta),y+tinggi,z+radatas*sin(theta));
 	};
 	glEnd();
-	glPopMatrix();
+	glPopMatrix();//memanggil fungsi dari push matrix
 	glPopMatrix();
 }
 
@@ -507,6 +507,17 @@ void Traktor()
     glVertex3f( 5.5,  -2.5, -8.1);
 	glEnd();
 
+	glBegin(GL_LINES);
+	glColor3f(0,0,0);
+	glVertex3f( -12.0, 8.5, -15.0);
+    glVertex3f( -12.0, 8.5, 6.0);
+	glVertex3f( -14.0, 8.5, -15.0);
+    glVertex3f( -14.0, 8.5, 6.0);
+	glVertex3f( -16.0, 8.5, -15.0);
+    glVertex3f( -16.0, 8.5, 6.0);
+	glEnd();
+
+	
 	glRotatef(90, 1.0f, 0.0f, 0.0f);
 	tabung(4.0f, 4.0f, 2.0f, 11.0f, -5.0f, -1.0f, 0, 360);
 	tabung(1.0f, 1.0f, 2.0f, 6.0f, -2.0f, 2.0f, 0, 360);
@@ -516,8 +527,13 @@ void Traktor()
 
 	glRotatef(90, 1.0f, 0.0f, 0.0f);
 	tabung(1.0f, 1.0f, 4.0f, 8.0f, 2.0f, -6.0f, 0, 360);
-
-	glPopMatrix();
+	tabung(0.5f, 0.5f, 15.0f, -14.0f, -9.0f, -6.0f, 0, 360);
+	tabung(0.5f, 0.5f, 15.0f, -14.0f, -9.0f, 15.0f, 0, 360);
+	glRotatef(90, 0.0f, 0.0f, 1.0f);
+	tabung(0.5f, 0.5f, 6.0f, -8.0f, 11.0f, -6.0f, 0, 360);
+	tabung(0.5f, 0.5f, 6.0f, -8.0f, 11.0f, 15.0f, 0, 360);
+	
+glPopMatrix();
 	glutSwapBuffers();
 }
 
@@ -547,7 +563,7 @@ void inisialisasi() {
 	is_depth = 1;
 	glDepthFunc(GL_LEQUAL);
 	glShadeModel(GL_SMOOTH);
-	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);//memberikan informasi bagaimana proses rendering ingin dilakukan
 }
 
 
@@ -653,8 +669,8 @@ int main(int argc, char** argv) {
    glutCreateWindow("3GP");          // Create window with the given title
    glutReshapeFunc(reshape);       // Register callback handler for window re-size event
    glutDisplayFunc(Traktor);       // Register callback handler for window re-paint event
-   glutKeyboardFunc(FungsiKeyboard);
-   glutMouseFunc(mouse);
+   glutKeyboardFunc(FungsiKeyboard);//fungsi keyboard
+   glutMouseFunc(mouse);//fungsi mouse
    glutMotionFunc(mousemotion);
    inisialisasi();
 	// Our own OpenGL initialization

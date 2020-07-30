@@ -1,4 +1,4 @@
-﻿Build started 30/07/2020 12:30:20.
+﻿Build started 30/07/2020 14:53:11.
      1>Project "C:\Users\jorge\OneDrive\Kuliah\TR_GRAFKOM_C_672018173_672018172_672018156\TR_GRAFKOM_C_672018173_672018172_672018156\TR_GRAFKOM_672018173\TR_GRAFKOM_672018173\TR_GRAFKOM_672018173.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\TR_GRAFKOM_672018173.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -51,4 +51,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.87
+Time Elapsed 00:00:01.65
