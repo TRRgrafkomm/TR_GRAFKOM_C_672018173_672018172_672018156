@@ -102,12 +102,10 @@ void Traktor()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glRotatef(xrot, 1.0f, 0.0f, 0.0f);
 	glRotatef(yrot, 0.0f, 1.0f, 0.0f);
-	glLineWidth(2);
+	glLineWidth(4.0);
+	glPointSize(15.0);
 	glPushMatrix();
-	//
-
-
-
+	
 	//Ruang Supir
 	glBegin(GL_POLYGON);
 	glColor3f(0,0,0);//depan
@@ -165,6 +163,11 @@ void Traktor()
     glVertex3f( 4.5, 1.5, 0.0);
 	glEnd();
 
+	glBegin(GL_POINTS);
+	glColor3f(0 , 0, 0);
+	glVertex3f (4.2, 3.0, 0.0 );
+	glEnd();
+	
 	glBegin(GL_POLYGON);
 	glColor3f(1,1,1);//kaca samping
 	glVertex3f( 1.0, 2.5, 0.0);
@@ -198,6 +201,14 @@ void Traktor()
     glVertex3f( 6.0, 0.0, -3.0);
 	glEnd();
 
+	glBegin(GL_LINES);
+	glColor3f(0,0,0);
+	glVertex3f(-7.0, 2.0, -3.0);
+	glVertex3f(6.0, 2.0, -3.0);
+	glVertex3f(-7.0, 1.0, -3.0);
+	glVertex3f(6.0, 1.0, -3.0);
+	glEnd();
+
 	glBegin(GL_POLYGON);
 	glColor3f(1,1,0);//kanan
 	glVertex3f( 6.0, 0.0, -3.0);
@@ -214,12 +225,28 @@ void Traktor()
     glVertex3f( -7.0, 0.0, -7.0);
 	glEnd();
 
+	glBegin(GL_LINES);
+	glColor3f(0, 0 , 0);
+	glVertex3f(6.0, 2.0, -7.0);
+	glVertex3f(-7.0, 2.0, -7.0);
+	glVertex3f(6.0, 1.0, -7.0);
+	glVertex3f(-7.0, 1.0, -7.0);
+	glEnd();
+
 	glBegin(GL_POLYGON);
 	glColor3f(1,1,0);
 	glVertex3f( -7.0, 0.0, -7.0);
     glVertex3f( -7.0, 3.0, -7.0);
     glVertex3f( -7.0, 3.0, -3.0);
     glVertex3f( -7.0, 0.0, -3.0);
+	glEnd();
+
+	glBegin(GL_LINES);
+	glColor3f(0,0,0);
+	glVertex3f(-7.0, 2.0, -7.0);
+	glVertex3f(-7.0, 2.0, -3.0);
+	glVertex3f(-7.0, 1.0, -7.0);
+	glVertex3f(-7.0, 1.0, -3.0);
 	glEnd();
 
 	glBegin(GL_POLYGON);
@@ -245,6 +272,26 @@ void Traktor()
     glVertex3f( -8.0, 0.0, 0.0);
     glVertex3f( 6.0, 0.0, 0.0);
     glVertex3f( 6.0, -0.5, 0.0);
+	glEnd();
+	
+	glBegin(GL_LINES);
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(-3.0, 0.0, 0.0);
+	glVertex3f(-3.0, 2.0, 0.0);
+	glVertex3f(-4.0, 0.0, 0.0);
+	glVertex3f(-4.0, 2.0, 0.0);
+	glVertex3f(-4.0, 1.7, 0.0);
+	glVertex3f(-3.0, 1.7, 0.0);
+	glVertex3f(-4.0, 1.3, 0.0);
+	glVertex3f(-3.0, 1.3, 0.0);
+	glVertex3f(-4.0, 0.9, 0.0);
+	glVertex3f(-3.0, 0.9, 0.0);
+	glVertex3f(-4.0, 0.5, 0.0);
+	glVertex3f(-3.0, 0.5, 0.0);
+	glVertex3f(-4.0, 2.0, 0.0);
+	glVertex3f(-4.0, 2.5, -0.5);
+	glVertex3f(-3.0, 2.0, 0.0);
+	glVertex3f(-3.0, 2.5, -0.5);
 	glEnd();
 
 	glBegin(GL_POLYGON);
